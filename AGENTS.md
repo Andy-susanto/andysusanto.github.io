@@ -21,3 +21,7 @@
 - Dark theme (`class="dark"`) with glassmorphism effects
 - Responsive design: mobile-first with `md:` and `lg:` breakpoints
 - WhatsApp integration for contact forms
+
+## Bahasa
+- **Komentar kode**: Gunakan bahasa Indonesia
+- **Commit message**: Gunakan bahasa Indonesia
