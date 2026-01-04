@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>sukangoding.id - Portofolio</title>
+    <meta name="description" content="Portofolio sukangoding.id - Fullstack Developer yang memadukan estetika desain dengan kode berkinerja tinggi."/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-bg": "#0B1121",
+                        "brand-pink": "#F43F5E",
+                        "brand-orange": "#FBbf24",
+                        "brand-purple": "#8B5CF6",
+                        "brand-blue": "#38BDF8",
+                        "surface-dark": "#161E32",
+                        "card-dark": "#1E293B",
+                        "border-dark": "#334155"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1121; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F43F5E; }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glass-panel {
+            background: rgba(22, 30, 50, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(35, 47, 72, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card:hover {
+            border-color: rgba(244, 63, 94, 0.4);
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.15);
+        }
+        .glow-input:focus {
+            box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+            border-color: #F43F5E;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg font-display text-white selection:bg-brand-pink selection:text-white">
+<div class="relative flex min-h-screen flex-col overflow-hidden bg-brand-bg">
+    <div class="absolute inset-0 z-0 bg-grid pointer-events-none"></div>
+    <div class="absolute top-0 right-0 z-0 h-[600px] w-[600px] translate-x-1/3 -translate-y-1/3 bg-brand-pink opacity-20 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 left-0 z-0 h-[500px] w-[500px] -translate-x-1/3 translate-y-1/3 bg-brand-orange opacity-10 blur-[100px] rounded-full"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-white/5 bg-brand-bg/80 backdrop-blur-md">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3">
+                <div class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-pink to-brand-purple shadow-lg shadow-brand-pink/20">
+                    <span class="material-symbols-outlined text-[24px] text-white">code</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-white leading-none">sukangoding<span class="text-brand-orange">.id</span></span>
+                    <span class="text-[10px] tracking-widest text-slate-400 uppercase">Portofolio</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 rounded-full border border-white/5 bg-white/5 px-6 py-2 backdrop-blur-sm">
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink transition-colors relative group" href="#beranda">Beranda<span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-pink transition-all group-hover:w-full"></span></a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink transition-colors relative group" href="#tentang">Tentang<span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-pink transition-all group-hover:w-full"></span></a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink transition-colors relative group" href="#keahlian">Keahlian<span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-pink transition-all group-hover:w-full"></span></a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink transition-colors relative group" href="#proyek">Proyek<span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-pink transition-all group-hover:w-full"></span></a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink transition-colors relative group" href="#kontak">Kontak<span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-pink transition-all group-hover:w-full"></span></a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/6282287106193" target="_blank" class="hidden md:flex h-10 items-center justify-center gap-2 rounded-full bg-white text-brand-bg px-5 text-sm font-bold transition hover:bg-slate-200 hover:scale-105 active:scale-95">
+                    <span class="material-symbols-outlined text-[18px]">chat_bubble</span>Mari Bicara
+                </a>
+                <button id="mobile-menu-btn" class="flex md:hidden items-center justify-center rounded-lg p-2 text-slate-300 hover:bg-white/10">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-brand-bg/95 backdrop-blur-md">
+            <nav class="flex flex-col p-4 gap-2">
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink py-2 px-4 rounded-lg hover:bg-white/5" href="#beranda">Beranda</a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink py-2 px-4 rounded-lg hover:bg-white/5" href="#tentang">Tentang</a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink py-2 px-4 rounded-lg hover:bg-white/5" href="#keahlian">Keahlian</a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink py-2 px-4 rounded-lg hover:bg-white/5" href="#proyek">Proyek</a>
+                <a class="text-sm font-medium text-slate-300 hover:text-brand-pink py-2 px-4 rounded-lg hover:bg-white/5" href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex grow flex-col">
+        <!-- Section: Beranda -->
+        <section id="beranda" class="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center py-12 lg:py-20 relative">
+            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 items-center">
+                <div class="flex flex-col justify-center text-left gap-8 order-2 lg:order-1 relative z-20">
+                    <div class="flex flex-col gap-4">
+                        <div class="inline-flex items-center gap-2 self-start rounded-full border border-brand-purple/30 bg-brand-purple/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-purple">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-purple"></span>
+                            </span>
+                            Tersedia untuk Freelance
+                        </div>
+                        <h1 class="font-display text-5xl font-black leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl">
+                            MENCIPTAKAN <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-brand-orange to-brand-purple">MASA DEPAN</span>
+                            DIGITAL
+                        </h1>
+                    </div>
+                    <div class="max-w-xl space-y-4 border-l-2 border-gradient-to-b from-brand-pink to-brand-orange pl-6">
+                        <p class="text-lg leading-relaxed text-slate-300 font-body">
+                            Halo! Saya <span class="text-white font-bold bg-gradient-to-r from-brand-pink to-brand-orange bg-clip-text text-transparent">Andy Susanto</span>, founder dari <span class="text-brand-orange font-semibold">sukangoding.id</span>.
+                        </p>
+                        <p class="text-base leading-relaxed text-slate-400 font-body">
+                            Dengan pengalaman bertahun-tahun di dunia pengembangan perangkat lunak, saya fokus pada menciptakan solusi digital yang tidak hanya berfungsi dengan baik, tetapi juga <span class="text-brand-blue font-medium">efisien</span> dan <span class="text-brand-purple font-medium">berkelanjutan</span>.
+                        </p>
+                        <p class="text-base leading-relaxed text-slate-400 font-body">
+                            Melalui sukangoding.id, saya membantu bisnis dan individu mentransformasikan ide mereka menjadi produk nyata—mulai dari <span class="text-slate-300">pengembangan aplikasi web</span>, <span class="text-slate-300">sistem manajemen data</span>, hingga <span class="text-slate-300">otomatisasi proses bisnis</span>.
+                        </p>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="material-symbols-outlined text-brand-pink text-lg">verified</span>
+                            <span class="text-sm text-slate-500 font-mono uppercase tracking-wider">Clean Code • Optimal Performance</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#proyek" class="group relative flex h-14 items-center justify-center gap-3 overflow-hidden rounded-full bg-brand-pink px-8 text-sm font-bold text-white transition-all hover:shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:-translate-y-1">
+                            <span class="absolute inset-0 bg-gradient-to-r from-brand-pink to-purple-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+                            <span class="relative z-10">Lihat Portofolio</span>
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform relative z-10">arrow_forward</span>
+                        </a>
+                        <button class="flex h-14 items-center justify-center gap-2 rounded-full border border-white/20 px-8 text-sm font-bold text-white transition-all hover:border-brand-orange hover:text-brand-orange bg-white/5 backdrop-blur-sm hover:bg-white/10">
+                            <span>Unduh CV</span>
+                            <span class="material-symbols-outlined text-[20px]">download</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-6 mt-6">
+                        <span class="text-xs font-mono text-slate-500 uppercase tracking-widest">Connect:</span>
+                        <div class="flex gap-4">
+                            <a class="text-slate-400 hover:text-white hover:bg-white/10 p-2 rounded-full transition-all" href="https://wa.me/6282287106193" target="_blank"><span class="material-symbols-outlined">code</span></a>
+                            <a class="text-slate-400 hover:text-[#0077b5] hover:bg-[#0077b5]/10 p-2 rounded-full transition-all" href="https://wa.me/6282287106193" target="_blank"><span class="material-symbols-outlined">work</span></a>
+                            <a class="text-slate-400 hover:text-brand-pink hover:bg-brand-pink/10 p-2 rounded-full transition-all" href="https://wa.me/6282287106193" target="_blank"><span class="material-symbols-outlined">photo_camera</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center justify-center order-1 lg:order-2">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 to-brand-orange/20 blur-[60px] rounded-full animate-pulse-slow"></div>
+                    <div class="relative z-10 w-full max-w-[520px] aspect-[4/3] animate-float">
+                        <div class="glass-panel h-full w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 flex flex-col">
+                            <div class="flex items-center justify-between border-b border-white/5 bg-black/20 px-6 py-4">
+                                <div class="flex gap-2">
+                                    <div class="h-3 w-3 rounded-full bg-brand-pink"></div>
+                                    <div class="h-3 w-3 rounded-full bg-brand-orange"></div>
+                                    <div class="h-3 w-3 rounded-full bg-brand-blue"></div>
+                                </div>
+                                <div class="flex items-center gap-2 text-xs font-mono text-slate-500">
+                                    <span class="material-symbols-outlined text-[14px]">code</span>app.js
+                                </div>
+                            </div>
+                            <div class="flex-1 p-6 sm:p-8 font-mono text-sm sm:text-base overflow-hidden relative">
+                                <div class="space-y-3 relative z-10">
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">1</span><div><span class="text-brand-purple">const</span> <span class="text-brand-blue">portfolio</span> <span class="text-white">=</span> <span class="text-brand-orange">{</span></div></div>
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">2</span><div class="pl-4"><span class="text-slate-300">creator:</span> <span class="text-brand-pink">'sukangoding.id'</span>,</div></div>
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">3</span><div class="pl-4"><span class="text-slate-300">role:</span> <span class="text-brand-pink">'Fullstack Developer'</span>,</div></div>
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">4</span><div class="pl-4"><span class="text-slate-300">skills:</span> <span class="text-brand-orange">[</span><span class="text-brand-blue">'Laravel'</span>, <span class="text-brand-blue">'PHP'</span>, <span class="text-brand-blue">'Go'</span><span class="text-brand-orange">]</span>,</div></div>
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">5</span><div class="pl-4"><span class="text-slate-300">passion:</span> <span class="text-brand-purple">true</span></div></div>
+                                    <div class="flex gap-4"><span class="text-slate-600 select-none text-right w-6">6</span><div><span class="text-brand-orange">}</span>;</div></div>
+                                    <div class="flex gap-4 mt-4"><span class="text-slate-600 select-none text-right w-6">7</span><div><span class="text-brand-blue">portfolio</span>.<span class="text-brand-orange">launch</span>(<span class="text-brand-purple">2024</span>); <span class="inline-block w-2 h-4 bg-brand-pink animate-pulse align-middle ml-1"></span></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Tentang Saya -->
+        <section id="tentang" class="py-20 px-4 md:px-10 relative">
+            <div class="max-w-5xl mx-auto flex flex-col gap-16">
+                <div class="flex flex-col gap-2 relative">
+                    <div class="flex items-center gap-3 text-brand-pink font-bold uppercase tracking-widest text-xs pl-2">
+                        <span class="w-6 h-[3px] bg-brand-pink rounded-full"></span><span>Profil Profesional</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white pl-2">Tentang <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-pink">Saya</span></h2>
+                </div>
+                <div class="glass-panel rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -top-24 -right-24 w-80 h-80 bg-brand-purple/20 rounded-full blur-[80px] pointer-events-none"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row gap-10 items-start">
+                        <div class="shrink-0 relative group mx-auto md:mx-0">
+                            <div class="absolute -inset-1 bg-gradient-to-tr from-brand-orange via-brand-pink to-brand-purple rounded-2xl opacity-75 blur-sm"></div>
+                            <div class="relative w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden bg-brand-bg">
+                                <img alt="Andy Susanto - sukangoding.id" class="w-full h-full object-cover" src="logo.jpg"/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 flex-1">
+                            <div>
+                                <h3 class="text-2xl md:text-4xl font-bold text-white mb-4">Halo, Saya <span class="text-brand-orange">&lt;</span>Full Stack Dev<span class="text-brand-orange">/&gt;</span></h3>
+                                <p class="text-slate-300 text-lg leading-relaxed font-body">Saya adalah pengembang web yang berdedikasi dengan hasrat untuk menciptakan pengalaman pengguna yang futuristik dan responsif. Dengan latar belakang yang kuat dalam teknologi modern, saya mengubah ide kompleks menjadi kode yang elegan dan efisien.</p>
+                            </div>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-1.5 rounded-full bg-brand-bg text-xs font-bold text-brand-blue border border-brand-blue/30">JKT, Indonesia</span>
+                                <span class="px-4 py-1.5 rounded-full bg-brand-bg text-xs font-bold text-brand-orange border border-brand-orange/30">Siap Bekerja</span>
+                                <span class="px-4 py-1.5 rounded-full bg-brand-bg text-xs font-bold text-brand-pink border border-brand-pink/30">Inggris / Indonesia</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <a href="https://wa.me/6282287106193" target="_blank" class="h-12 px-8 bg-brand-blue hover:bg-brand-blue/90 text-white text-sm font-bold rounded-xl transition-all flex items-center gap-2 shadow-lg shadow-brand-blue/25 hover:-translate-y-1">
+                                    <span class="material-symbols-outlined text-[20px]">mail</span>Hubungi Saya
+                                </a>
+                                <a href="#proyek" class="h-12 px-8 bg-transparent border-2 border-slate-600 hover:border-white text-white text-sm font-bold rounded-xl transition-all flex items-center gap-2 hover:bg-white/5">
+                                    <span class="material-symbols-outlined text-[20px]">folder_open</span>Lihat Proyek
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-panel p-6 rounded-2xl relative group overflow-hidden hover:border-brand-pink/50 transition-colors">
+                        <div class="flex flex-col gap-2 relative z-10">
+                            <span class="text-slate-400 font-medium text-sm uppercase tracking-wider">Proyek Selesai</span>
+                            <span class="text-5xl font-bold text-white">50<span class="text-brand-pink">+</span></span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl relative group overflow-hidden hover:border-brand-orange/50 transition-colors">
+                        <div class="flex flex-col gap-2 relative z-10">
+                            <span class="text-slate-400 font-medium text-sm uppercase tracking-wider">Pengalaman</span>
+                            <span class="text-5xl font-bold text-white">5<span class="text-brand-orange"> Th</span></span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl relative group overflow-hidden hover:border-brand-purple/50 transition-colors">
+                        <div class="flex flex-col gap-2 relative z-10">
+                            <span class="text-slate-400 font-medium text-sm uppercase tracking-wider">Klien Puas</span>
+                            <span class="text-5xl font-bold text-white">20<span class="text-brand-purple">+</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Keahlian -->
+        <section id="keahlian" class="py-20 px-4 md:px-10 relative">
+            <div class="max-w-5xl mx-auto flex flex-col gap-10">
+                <div class="flex flex-col items-center text-center space-y-4">
+                    <div class="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold tracking-widest uppercase mb-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>Kemampuan Sistem
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-pink to-brand-blue">KEAHLIAN TEKNIS</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl font-light">Koleksi alat, bahasa pemrograman, dan teknologi terpilih yang saya gunakan untuk merancang pengalaman digital masa depan.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
+                    <!-- Skill Cards -->
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-pink text-2xl">code_blocks</span></div>
+                                <div><h3 class="text-white font-bold text-lg">Laravel</h3><span class="text-brand-pink text-[10px] font-bold tracking-widest uppercase bg-brand-pink/10 px-2 py-0.5 rounded-full">Framework</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">95%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-pink to-brand-orange rounded-full w-[95%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-purple text-2xl">terminal</span></div>
+                                <div><h3 class="text-white font-bold text-lg">PHP</h3><span class="text-brand-purple text-[10px] font-bold tracking-widest uppercase bg-brand-purple/10 px-2 py-0.5 rounded-full">Bahasa</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">95%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-purple to-brand-pink rounded-full w-[95%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-orange text-2xl">data_object</span></div>
+                                <div><h3 class="text-white font-bold text-lg">Python</h3><span class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-orange/10 px-2 py-0.5 rounded-full">Bahasa</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">90%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-orange to-brand-pink rounded-full w-[90%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-blue text-2xl">speed</span></div>
+                                <div><h3 class="text-white font-bold text-lg">Golang</h3><span class="text-brand-blue text-[10px] font-bold tracking-widest uppercase bg-brand-blue/10 px-2 py-0.5 rounded-full">Bahasa</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">85%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-blue to-brand-purple rounded-full w-[85%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-pink text-2xl">code</span></div>
+                                <div><h3 class="text-white font-bold text-lg">React</h3><span class="text-brand-pink text-[10px] font-bold tracking-widest uppercase bg-brand-pink/10 px-2 py-0.5 rounded-full">Frontend</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">88%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-pink to-brand-blue rounded-full w-[88%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="group glass-card p-6 rounded-xl flex flex-col gap-4 hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="p-3 rounded-xl bg-gradient-to-br from-surface-dark to-brand-bg border border-slate-700/50"><span class="material-symbols-outlined text-brand-orange text-2xl">database</span></div>
+                                <div><h3 class="text-white font-bold text-lg">MySQL</h3><span class="text-brand-orange text-[10px] font-bold tracking-widest uppercase bg-brand-orange/10 px-2 py-0.5 rounded-full">Database</span></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 pt-2">
+                            <div class="flex justify-between text-xs text-slate-400 font-medium"><span>Penguasaan</span><span class="text-white">90%</span></div>
+                            <div class="h-2 w-full bg-brand-bg rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-orange to-brand-purple rounded-full w-[90%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Proyek -->
+        <section id="proyek" class="py-20 px-4 md:px-10 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+                    <div class="flex flex-col gap-4 max-w-2xl">
+                        <h2 class="text-white text-4xl md:text-5xl font-bold leading-tight tracking-tight">Portofolio <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-orange">Proyek</span></h2>
+                        <p class="text-gray-400 text-lg font-normal leading-relaxed max-w-xl font-body">Koleksi proyek pilihan yang mengeksplorasi perpaduan desain futuristik, kode yang bersih, dan pengalaman pengguna yang optimal.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <!-- Project 1 -->
+                    <article class="group flex flex-col bg-card-dark rounded-xl overflow-hidden border border-border-dark hover:border-brand-orange transition-all duration-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1">
+                        <div class="relative w-full aspect-video overflow-hidden">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZFodkJtNBiLCcjS7yQFpkujw_k3IcNiOqXRQekINi-ons0gfSAYdJvVPDpdDlA63uistZ5PBt3FmU5y8qHjllmsjUmfQSpEd8OKBHawvL2GKTJy3ubc7IAKkCAvzbU1l5LtkvN93FJeOJxdgLTThRwnb5bX0fWL4M9ng_04b5elAEoBeY2UL5gpx4J3JdM1_jnSTJvuH4epGTOmNohpDlMtSI76Mow1QFmm8dKOqi6zJxsad0TYQaMlQn-KQnuI6RGeFn4eLVQrZ-");'></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent opacity-80"></div>
+                        </div>
+                        <div class="flex flex-col flex-1 p-5 gap-4">
+                            <div><h3 class="text-white text-xl font-bold tracking-tight group-hover:text-brand-orange transition-colors">Dasbor Kripto</h3><p class="text-gray-400 text-sm leading-relaxed font-body line-clamp-2 mt-2">Dasbor waktu nyata yang memvisualisasikan tren kripto menggunakan CoinGecko API.</p></div>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-brand-orange/10 text-brand-orange text-xs font-medium border border-brand-orange/20">React</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">ChartJS</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">API</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project 2 -->
+                    <article class="group flex flex-col bg-card-dark rounded-xl overflow-hidden border border-border-dark hover:border-brand-pink transition-all duration-300 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] hover:-translate-y-1">
+                        <div class="relative w-full aspect-video overflow-hidden">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoZ7J6Pvha7kcrGD4IRIxnZHUmWN9Gc7x8IW65qqVSzWmOwCjf4VqiT6E67xuJs4nCOhONhrsj4vB4kHpPf6-8_kI3L_oe3wqgMJ-54v6dObNovpxstlrsAhOqpNYglGoLT8lw6bPt3QIGHy5lVq6d4ypWD06hONHNQ-KQOe_eY2EI8Pooxsoy-7Vyok-MFiLZlHdeVidBc3ir3pvqFuvc6UrQovzrFzU75fbQbohIyKw7HfUoHazJJfs804qeiNSAWLeExn1zDfHY");'></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent opacity-80"></div>
+                        </div>
+                        <div class="flex flex-col flex-1 p-5 gap-4">
+                            <div><h3 class="text-white text-xl font-bold tracking-tight group-hover:text-brand-pink transition-colors">API E-Commerce</h3><p class="text-gray-400 text-sm leading-relaxed font-body line-clamp-2 mt-2">RESTful API yang tangguh untuk platform ritel online dengan gateway pembayaran aman.</p></div>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-brand-pink/10 text-brand-pink text-xs font-medium border border-brand-pink/20">NodeJS</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">Express</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project 3 -->
+                    <article class="group flex flex-col bg-card-dark rounded-xl overflow-hidden border border-border-dark hover:border-brand-blue transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.15)] hover:-translate-y-1">
+                        <div class="relative w-full aspect-video overflow-hidden">
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPaKET5vsxrDGwb1KEjCZgGq--qAVTJ-ahvzSNJZiD9GRG9w1OoHYHRGWZy8U0EVEzYyuFN2dui6OLFLMjySusqVL3qidFq6QLY_6ZZ4-ZT6Hx4V6an0f_AMTFHLqwY6noSphf91RyCZ5tfTypaHHLjCxyemj5xgNpufX_J_a82LssXxk-p2CQNjIfCqanfs5Vq4x16QS67HTqIW69pQWhBb46zl7TjaXycxiALqgXfnJDYY6DHoPOixJ-CGvJnX3eoVoVDZd2NTJv");'></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-card-dark via-transparent to-transparent opacity-80"></div>
+                        </div>
+                        <div class="flex flex-col flex-1 p-5 gap-4">
+                            <div><h3 class="text-white text-xl font-bold tracking-tight group-hover:text-brand-blue transition-colors">Nebula Banking</h3><p class="text-gray-400 text-sm leading-relaxed font-body line-clamp-2 mt-2">Antarmuka perbankan futuristik dengan efek glassmorphism dan interaksi mikro.</p></div>
+                            <div class="mt-auto flex flex-wrap gap-2">
+                                <span class="px-2.5 py-1 rounded bg-brand-blue/10 text-brand-blue text-xs font-medium border border-brand-blue/20">Vue</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded bg-border-dark text-gray-300 text-xs font-medium">UI/UX</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Kontak -->
+        <section id="kontak" class="py-20 px-4 md:px-10 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="w-full mb-12 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink text-xs font-bold tracking-wider mb-4">
+                        <span class="size-2 rounded-full bg-brand-pink animate-pulse"></span>OPEN FOR WORK
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-white">HUBUNGI <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink via-rose-500 to-brand-orange">SAYA</span></h2>
+                    <p class="text-gray-400 text-lg md:text-xl max-w-2xl font-body">Siap mewujudkan ide digital Anda? Mari berdiskusi tentang proyek web atau aplikasi mobile Anda selanjutnya.</p>
+                </div>
+                <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                    <div class="glass-panel rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden border-t-4 border-t-brand-pink">
+                        <form onsubmit="sendToWhatsapp(event)" class="flex flex-col gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2 uppercase tracking-wider text-xs" for="name">Nama Lengkap</label>
+                                <input class="glow-input w-full bg-brand-bg/50 border border-border-dark rounded-lg px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none transition-all duration-300" id="name" name="name" placeholder="Siapa nama Anda?" type="text"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2 uppercase tracking-wider text-xs" for="email">Email</label>
+                                <input class="glow-input w-full bg-brand-bg/50 border border-border-dark rounded-lg px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none transition-all duration-300" id="email" name="email" placeholder="contoh@email.com" type="email"/>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2 uppercase tracking-wider text-xs" for="message">Pesan</label>
+                                <textarea class="glow-input w-full bg-brand-bg/50 border border-border-dark rounded-lg px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none transition-all duration-300 resize-none" id="message" name="message" placeholder="Tuliskan detail proyek atau pertanyaan Anda..." rows="4"></textarea>
+                            </div>
+                            <button class="group relative w-full overflow-hidden rounded-lg bg-gradient-to-r from-brand-pink to-rose-600 py-4 px-5 text-center font-bold text-white transition-all hover:shadow-[0_0_20px_rgba(244,63,94,0.5)]" type="submit">
+                                <div class="relative flex items-center justify-center gap-2"><span>KIRIM PESAN WHATSAPP</span><span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:translate-x-1">send</span></div>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="flex flex-col justify-center gap-10">
+                        <div class="grid gap-6">
+                            <a class="group glass-panel rounded-xl p-5 flex items-center gap-5 hover:border-brand-pink/50 transition-colors duration-300" href="https://wa.me/6282287106193" target="_blank">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-pink/10 text-brand-pink group-hover:bg-brand-pink group-hover:text-white transition-colors"><span class="material-symbols-outlined">chat</span></div>
+                                <div><p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">WhatsApp</p><p class="text-lg font-medium text-white">+62 822 8710 6193</p></div>
+                            </a>
+                            <div class="group glass-panel rounded-xl p-5 flex items-center gap-5 hover:border-brand-orange/50 transition-colors">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange/10 text-brand-orange group-hover:bg-brand-orange group-hover:text-brand-bg transition-colors"><span class="material-symbols-outlined">code</span></div>
+                                <div><p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Stack Teknologi</p><p class="text-lg font-medium text-white">Web & Mobile App Dev</p></div>
+                            </div>
+                        </div>
+                        <div class="glass-panel rounded-lg p-4 border-l-4 border-l-brand-orange bg-brand-orange/5">
+                            <div class="flex items-center gap-3">
+                                <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span></span>
+                                <p class="text-sm font-medium text-brand-orange font-mono uppercase tracking-widest">Status: Online</p>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-2 pl-6">Membalas pesan secepatnya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 bg-brand-bg py-8">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-slate-500">© 2024 sukangoding.id. Didesain dengan <span class="text-brand-pink">♥</span> dan Kopi.</p>
+            <div class="flex gap-6">
+                <a class="text-slate-500 hover:text-brand-orange transition-colors text-xs uppercase tracking-wider font-medium" href="#">Privasi</a>
+                <a class="text-slate-500 hover:text-brand-orange transition-colors text-xs uppercase tracking-wider font-medium" href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+
+    function sendToWhatsapp(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        let fullMessage = `Halo, nama saya ${name}`;
+        if (email) fullMessage += ` (${email})`;
+        fullMessage += `. ${message}`;
+        
+        const url = `https://wa.me/6282287106193?text=${encodeURIComponent(fullMessage)}`;
+        window.open(url, '_blank');
+    }
+</script>
+</body>
+</html>
